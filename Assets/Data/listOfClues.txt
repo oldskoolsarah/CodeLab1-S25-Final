@@ -1,0 +1,16 @@
+BLUE said they were in the Kitchen
+BLUE was sure they had not seen YELLOW near the Kitchen
+BLUE said they had not seen GREEN near the Kitchen
+BLUE said they were nowhere near the Conservatory
+RED said they were in the Ballroom
+RED was sure that they had seen GREEN near the Kitchen
+RED said they saw no one near the Library
+RED said they had not seen BLUE near the Kitchen
+GREEN said they were in the Billiard's Room
+GREEN says they had not seen YELLOW near the Kitchen
+GREEN said they were nowhere near the Conservatory
+GREEN was sure that BLUE was in the Hall
+YELLOW said they were in the Conservatory
+YELLOW said they were nowhere near the Library
+YELLOW said they saw RED near the Ballroom
+YELLOW was sure that BLUE was not near the Kitchen

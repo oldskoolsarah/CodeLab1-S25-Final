@@ -13,11 +13,15 @@ public class Timer : MonoBehaviour
 
     public const string TimerTick = "UpdateTimer";
 
+    [SerializeField] GameManager gameManager;
+
     //public bool isGameOver = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        gameManager = FindObjectOfType<GameManager>();
 
         timerDisplay.text = TimerString(gameTime);
         //timerDisplay.text = gameTime.ToString();
@@ -35,11 +39,15 @@ public class Timer : MonoBehaviour
         {
             GameManager.instance.UpdateHighScores();
 
-            timerDisplay.text = "Game Over!" + " Your Score: " + GameManager.instance.Score + " High Score: " + GameManager.instance.currentHighScore;
-            
+            timerDisplay.text = "Game Over!"; 
+
+            //timerDisplay.text = "Game Over!" + " Your Score: " + GameManager.instance.Score + " High Score: " + GameManager.instance.currentHighScore;
+
             //isGameOver = true;
-           
+
             CancelInvoke(TimerTick);
+
+            gameManager.EndGame();
         }
         else
         {
@@ -49,11 +57,18 @@ public class Timer : MonoBehaviour
         }
     }
 
-    string TimerString(int timeInt)
+    public void StopTimer()
+    {
+        CancelInvoke(TimerTick);
+        
+    }
+
+
+    public string TimerString(int timeInt)
     {
         string result = "";
 
-        result = "Time: " + timeInt + " Score: " + GameManager.instance.Score + " High Score: " + GameManager.instance.currentHighScore;
+        result = "Time: " + timeInt + " Score: " + gameManager.Score + " High Score: " + gameManager.currentHighScore;
 
         return result;
     }
