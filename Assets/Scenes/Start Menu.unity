@@ -127,6 +127,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1575313069830989255, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575313069830989255, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575313069830989255, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575313069830989255, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2414195125618160815, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -218,16 +234,33 @@ PrefabInstance:
     - target: {fileID: 6906254554579524673, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5373475686973292439, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      objectReference: {fileID: 35501352}
     - target: {fileID: 6906254554579524673, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PressPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809191578689342407, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809191578689342407, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809191578689342407, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809191578689342407, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8929339494140522075, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5373475686973292439, guid: f65c4dd7d7630ff4c825f4a465de08e8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -374,6 +407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d6f6326331884498b8c15338aa0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instructionCanvas: {fileID: 1385583900}
+  instructionPanel1: {fileID: 616104657}
+  instructionPanel2: {fileID: 865215948}
 --- !u!1 &92114381
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -41, y: -24}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92114383
@@ -431,19 +467,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Each suspect has a motive -- it turns out Roger Rabbit had quite a lot
-    of beef with people. Inconveniently, all of them also have an alibi.  \r\n\r\nYour
-    goal is to find out who dunnit by catching someone in a lie. You only have five
-    days to solve the mystery before the suspects leave town, or else the mystery
-    is forever unsolved.\r\n\r\nEach day, the player can use the map to move to different
-    locations and question suspects. However, you are only limited to 3 actions per
-    day (morning, afternoon, and evening), so choose your moves wisely.\\n\\nYou
-    may conduct one action each turn: \r\n\r\n      1. Investigate area (+5 points) 
-    \r\n      2. Talk (+5 points)   \r\n      3. Accuse (-25 points)  \r\n\r\nThe
-    murderer can be discovered by identifying contradicting alibis across the suspects,
-    and accusing the right person of the crime. If you catch the killer, you will
-    win the game and the goodwill of Toontown forever. Good Luck!  [Press space to
-    continue]"
+  m_text: 'Your mission, should you choose to accept it, is to solve the Murdle by
+    requesting Clues (using Space) until you have enough information to deduce who
+    was lying about where they were.
+
+
+    Once you spot the liar, you will know
+    who really committed the crime and can nab them on the spot. But you must be
+    speedy - the clock is ticking!
+
+
+    Best of Luck!
+
+
+    [Press space to continue]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2a2b78da6d61a1429cb653f20c3b709, type: 2}
   m_sharedMaterial: {fileID: 6820850798374585872, guid: e2a2b78da6d61a1429cb653f20c3b709, type: 2}
@@ -470,7 +507,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.1
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -769,7 +806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -41, y: -24}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782614644
@@ -792,17 +829,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Two nights ago, all of Toontown gathered to witness a momentous event:
-    Roger Rabbit was to receive a lifetime achievement Emmy award, the first by any
-    Toon. However, shortly before the ceremony, he was found dead in the Toontown
-    Theater. \r\n\r\nAs the residents of Toontown reel from the cold-blooded murder,
-    YOU have been called in to solve this heinous crime. \r\n\r\nThe facts are as
-    follows:\r\n\r\n- The murder occurred in Mr. Rabbit's dressing room, right before
-    the Emmy's award ceremony.\r\n- There were no eye witnesses, and no one was seen
-    entering or leaving the room.\r\n- However there are five potential suspects
-    who were in close promixity and could have committed this horrible crime:\r\n 
-    - William Shakespeare\r\n  - Bugs Bunny\r\n  - Elvis\r\n  - Scooby Doo\r\n  -
-    Colonel Sanders\r\n\r\n[Press space to continue]"
+  m_text: "YOU are an investigator who has arrived to solve a Murdle in a mansion.
+    (Lucky you!)\r\n \r\n\rThere are four suspects in total who could have committed
+    the murder:\r\r\n  - RED\r\n  - BLUE\r\n  - GREEN\r\n  - YELLOW\r\n\r\nAnd also
+    five locations where they could have claimed to be:\r\r\n  - Hall\n  - Library\n 
+    - Kitchen\n  - Conservatory\n  - Billiard's Room\n\n[Press space to continue]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2a2b78da6d61a1429cb653f20c3b709, type: 2}
   m_sharedMaterial: {fileID: 6820850798374585872, guid: e2a2b78da6d61a1429cb653f20c3b709, type: 2}
@@ -829,7 +860,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.55
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

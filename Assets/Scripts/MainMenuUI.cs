@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    private GameObject instructionCanvas;
-    private GameObject instructionPanel1;
-    private GameObject instructionPanel2;
+    [SerializeField] private GameObject instructionCanvas;
+    [SerializeField] private GameObject instructionPanel1;
+    [SerializeField] private GameObject instructionPanel2;
+
     //private GameObject instructionPanel3;
     //private GameObject instructionPanel4;
 
@@ -16,13 +17,15 @@ public class MainMenuUI : MonoBehaviour
 
     private void Awake()
     {
-        instructionCanvas = GameObject.Find("InstructionCanvas");
+        //instructionCanvas = GameObject.Find("InstructionCanvas");
+
         if (instructionCanvas == null)
         {
             Debug.Log("InstructionCanvas not found");
         }
 
-        instructionPanel1 = GameObject.Find("Instruction1");
+        //instructionPanel1 = GameObject.Find("Instruction1");
+
         if (instructionPanel1 == null)
         {
             Debug.Log("Instruction panel 1 not found");
@@ -32,7 +35,7 @@ public class MainMenuUI : MonoBehaviour
             instructionPanel1.SetActive(false);
         }
 
-        instructionPanel2 = GameObject.Find("Instruction2");
+        //instructionPanel2 = GameObject.Find("Instruction2");
         instructionPanel2.SetActive(false);
 
         //instructionPanel3 = GameObject.Find("Instruction3");

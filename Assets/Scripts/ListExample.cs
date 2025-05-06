@@ -49,7 +49,34 @@ public class ListExample : MonoBehaviour
 
     public void DidValueChange()
     {
+        // If there's nothing in the text box, show instructions.
+        if (input.text == "")
+        {
+            //display.text = "Type a name to see if it's in the list!";
+        }
+        // Otherwise, check to see if the name is in the list.
+        else
+        {
+            // Start by setting the display to say "not in list".
+            display.text = "Who?";
 
+
+            // Loop through the entire list
+            for (int i = 0; i < namesList.Count; i++)
+            {
+                // If any of the namesList in the list match what in the input field,
+                // say it's in the list.
+                if (input.text.ToUpper() == namesList[i])
+                {
+                    display.text = "Okay, they were there...";
+                }
+
+            }
+
+
+
+           
+        }
 
     }
 
@@ -57,58 +84,25 @@ public class ListExample : MonoBehaviour
     {
         if (gameManager.isGameOver == false)
         {
-
-            // If there's nothing in the text box, show instructions.
-            if (input.text == "")
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                //display.text = "Type a name to see if it's in the list!";
-            }
-            // Otherwise, check to see if the name is in the list.
-            else
-            {
-                // Start by setting the display to say "not in list".
-                display.text = "Who?";
-
-
-                // Loop through the entire list
-                for (int i = 0; i < namesList.Count; i++)
+                if (input.text.ToUpper() == "BLUE")
                 {
-                    // If any of the namesList in the list match what in the input field,
-                    // say it's in the list.
-                    if (input.text.ToUpper() == namesList[i])
-                    {
-                        display.text = "Okay, they were there...";
-                    }
+                    display.text = "You got 'em!";
+                    Debug.Log("You got 'em!");
 
+                    gameManager.EndGame();
                 }
 
-                //TODO: Is there a better way to do this? With less code?
-                //TODO: That will be faster?
-
-                //of (namesList.Contains(input.text.ToUpper()))
-                //  {
-                //    display.text = "In the list!";
-                //}
-
-                if (Input.GetKeyDown(KeyCode.Return))
+                else
                 {
-                    if (input.text.ToUpper() == "BLUE")
-                    {
-                        display.text = "You got 'em!";
-                        Debug.Log("You got 'em!");
-
-                        gameManager.EndGame();
-                    }
-
-                    else
-                    {
-                        display.text = "Nope! Try again!";
-                        Debug.Log("Try again!");
-                        gameManager.Score -= 50;
-                    }
-
+                    display.text = "Nope! Try again!";
+                    Debug.Log("Try again!");
+                    gameManager.Score -= 50;
                 }
+
             }
+
         }
 
         else
